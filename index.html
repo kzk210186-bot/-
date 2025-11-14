@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Розклад дзвінків</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #0000ff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            height: 45px;
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: white;
+            cursor: pointer;
+        }
+        .day-button {
+            background: #0000ff;
+            color: white;
+            font-weight: bold;
+        }
+        #monday, #tuesday, #wednesday, #thursday, #friday {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">РОЗКЛАД ДЗВІНКІВ</div>
 
+    <button class="day-button" onclick="showDay('monday')">Понеділок</button>
+    <div id="monday">
+        <button>Урок 1 (8:45-9:30)</button>
+        <button>Урок 2 (9:35-10:20)</button>
+    </div>
+
+    <button class="day-button" onclick="showDay('tuesday')">Вівторок</button>
+    <div id="tuesday">
+        <button>1 зміна (8:45-12:30)</button>
+        <button>2 зміна (13:00-16:00)</button>
+    </div>
+
+    <script>
+    function showDay(day) {
+        // Ховаємо всі дні
+        document.getElementById('monday').style.display = 'none';
+        document.getElementById('tuesday').style.display = 'none';
+        
+        // Показуємо вибраний день
+        document.getElementById(day).style.display = 'block';
+    }
+    </script>
+</body>
+</html>
